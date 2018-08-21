@@ -1,0 +1,52 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "phonegap-plugin-push": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-battery-status": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    }
+  }
+}
