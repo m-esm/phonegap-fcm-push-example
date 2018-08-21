@@ -36,12 +36,18 @@ function onDeviceReady() {
 
             //Notification was received on device tray and tapped by the user.
             log({ onNotification: data });
+            navigator.notification.alert(
+                data.body,         // message
+                null,                 // callback
+                data.title,           // title
+                'Ok'                  // buttonName
+            );
 
         } else {
             //Notification was received in foreground. Maybe the user needs to be notified.
             log({ onNotification: data });
             navigator.notification.alert(
-                data.message,         // message
+                data.body,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
