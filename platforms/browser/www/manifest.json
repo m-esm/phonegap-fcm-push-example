@@ -1,1 +1,11 @@
-{"background_color":"#FFF","display":"standalone","name":"FCM Push","short_name":"FCM Push","version":"agency.serendip.phonegap_fcm_push_example","description":"This project is an example of implementing fcm push with phonegap.","author":"Serendip Agency","icons":[],"start_url":"index.html","gcm_sender_id":"996231231186"}
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "FCM Push",
+  "short_name": "FCM Push",
+  "version": "agency.serendip.phonegap_fcm_push_example",
+  "description": "This project is an example of implementing fcm push with phonegap.",
+  "author": "Serendip Agency",
+  "icons": [],
+  "start_url": "index.html"
+}

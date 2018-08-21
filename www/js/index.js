@@ -17,25 +17,30 @@ function onDeviceReady() {
 
     log({ message: 'device is ready' });
 
-    const push = PushNotification.init({
-        android: {},
-        browser: {
-            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-        },
-        ios: {
-            alert: 'true',
-            badge: true,
-            sound: 'false'
-        },
-        windows: {}
+    //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
+    //Note that this callback will be fired everytime a new token is generated, including the first time.
+    FCMPlugin.onTokenRefresh(function (token) {
+        log({ onTokenRefresh: token });
     });
 
-    push.on('registration', data => {
-        log(data);
+    //FCMPlugin.getToken( successCallback(token), errorCallback(err) );
+    //Keep in mind the function will return null if the token has not been established yet.
+    FCMPlugin.getToken(function (token) {
+        log({ getToken: token });
     });
 
-    push.on('error', e => {
-        log(e);
+    //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
+    //Here you define your application behaviour based on the notification data.
+    FCMPlugin.onNotification(function (data) {
+        if (data.wasTapped) {
+            
+            //Notification was received on device tray and tapped by the user.
+            log({ onNotification: data });
+
+        } else {
+            //Notification was received in foreground. Maybe the user needs to be notified.
+            log({ onNotification: data });
+        }
     });
 
 
