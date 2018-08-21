@@ -11,11 +11,15 @@ function log(input) {
 }
 
 log({ message: 'hello' });
-
+var i = 0;
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 
     log({ message: 'device is ready' });
+
+    PushNotification.hasPermission(data => {
+        log({ hasPermission: data })
+    });
 
     const push = PushNotification.init({
         android: {},
@@ -31,12 +35,66 @@ function onDeviceReady() {
     });
 
     push.on('registration', data => {
-        log(data);
+
+        log({ registration: data })
+    });
+
+    push.on('notification', data => {
+        log({ notification: data })
+
+        push.setApplicationIconBadgeNumber(
+            () => {
+                log({ setApplicationIconBadgeNumber: 'success' })
+            },
+            () => {
+                log({ setApplicationIconBadgeNumber: 'error' })
+
+            },
+            i++
+        );
+
     });
 
     push.on('error', e => {
-        log(e);
+        log({ error: e })
     });
+
+    PushNotification.createChannel(
+        () => {
+            console.log('success');
+        },
+        () => {
+            console.log('error');
+        },
+        {
+            id: 'testchannel1',
+            description: 'My first test channel',
+            importance: 3,
+            vibration: true
+        }
+    );
+    // //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
+    // //Note that this callback will be fired everytime a new token is generated, including the first time.
+    // FCMPlugin.onTokenRefresh(function (token) {
+    //     log({ onTokenRefresh: token });
+    // });
+
+    // //FCMPlugin.getToken( successCallback(token), errorCallback(err) );
+    // //Keep in mind the function will return null if the token has not been established yet.
+    // FCMPlugin.getToken(function (token) {
+    //     log({ getToken: token });
+    // });
+
+    // //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
+    // //Here you define your application behaviour based on the notification data.
+    // FCMPlugin.onNotification(function (data) {
+    //     navigator.notification.alert(
+    //         data.body,         // message
+    //         null,                 // callback
+    //         data.title,           // title
+    //         'Ok'                  // buttonName
+    //     );
+    // });
 
 
 }
