@@ -33,13 +33,20 @@ function onDeviceReady() {
     //Here you define your application behaviour based on the notification data.
     FCMPlugin.onNotification(function (data) {
         if (data.wasTapped) {
-            
+
             //Notification was received on device tray and tapped by the user.
             log({ onNotification: data });
 
         } else {
             //Notification was received in foreground. Maybe the user needs to be notified.
             log({ onNotification: data });
+            navigator.notification.alert(
+                data.message,         // message
+                null,                 // callback
+                data.title,           // title
+                'Ok'                  // buttonName
+            );
+
         }
     });
 
