@@ -107,8 +107,9 @@
 		<allow-intent href="itms:*" />
 		<allow-intent href="itms-apps:*" />
 	</platform>
+	<preference name="phonegap-version" value="cli-7.0.1" />
 	<platform name="android">
-		<resource-file src="google-services.json" target="google-services.json" />
+		<resource-file src="google-services.json" target="/google-services.json" />
 	</platform>
 	<plugin name="cordova-plugin-fcm" spec="~2.1.2" />
 </widget>
