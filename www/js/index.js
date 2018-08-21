@@ -29,6 +29,7 @@ function log(input) {
     httpPost('http://20.30.0.92:2020/echo', input)
 }
 
+log({ message: 'hello server' });
 
 var app = {
     // Application Constructor

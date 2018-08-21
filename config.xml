@@ -109,7 +109,7 @@
 	</platform>
 	<!-- FCM Configurations -->
 	<platform name="android">
-		<resource-file src="google-services.json" target="app/google-services.json" />
+		<resource-file src="google-services.json" target="google-services.json" />
 	</platform>
 	<plugin name="phonegap-plugin-push" spec="~2.2.3" />
 </widget>
