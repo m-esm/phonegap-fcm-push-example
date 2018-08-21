@@ -64,6 +64,8 @@ function onDeviceReady() {
     //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
     //Here you define your application behaviour based on the notification data.
     FCMPlugin.onNotification(function (data) {
+
+        navigator.vibrate(1000);
         navigator.notification.alert(
             data.body,         // message
             null,                 // callback
