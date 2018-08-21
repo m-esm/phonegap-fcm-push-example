@@ -16,6 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+function httpPost(url, json) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(json));
+}
+
+function log(input) {
+    console.log(input);
+    httpPost('http://20.30.0.92:2020/echo', input)
+}
+
+
 var app = {
     // Application Constructor
     initialize: function () {
@@ -27,6 +41,9 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function () {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
+
+
     },
     // deviceready Event Handler
     //
@@ -34,6 +51,8 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function () {
         app.receivedEvent('deviceready');
+
+        log({ message: 'device is ready' });
 
         const push = PushNotification.init({
             android: {},
@@ -49,7 +68,12 @@ var app = {
         });
 
         push.on('registration', data => {
+            log(data);
             document.getElementById('push_token').innerHTML = data.registrationId;
+        });
+
+        push.on('error', e => {
+            log(e);
         });
 
 
