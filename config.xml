@@ -112,4 +112,5 @@
         <resource-file src="google-services.json" target="/google-services.json" />
     </platform>
     <plugin name="cordova-plugin-fcm" spec="~2.1.2" />
+    <plugin name="phonegap-plugin-push" spec="https://github.com/phonegap/phonegap-plugin-push" />
 </widget>

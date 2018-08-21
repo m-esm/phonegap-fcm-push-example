@@ -1,27 +1,23 @@
 {
-  "_from": "phonegap-plugin-push@2.2.3",
+  "_from": "git+https://github.com/phonegap/phonegap-plugin-push.git",
   "_id": "phonegap-plugin-push@2.2.3",
   "_inBundle": false,
-  "_integrity": "sha512-5mjT0G1vfRhXVnZFLwjfzcFwYjVRMibgYDCfYvEujGsP8YwwrIIzcf+xBYAjQV/W2JCjzuNaYd7xJ0yVQaPeig==",
   "_location": "/phonegap-plugin-push",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "phonegap-plugin-push@2.2.3",
-    "name": "phonegap-plugin-push",
-    "escapedName": "phonegap-plugin-push",
-    "rawSpec": "2.2.3",
-    "saveSpec": null,
-    "fetchSpec": "2.2.3"
+    "type": "git",
+    "raw": "https://github.com/phonegap/phonegap-plugin-push",
+    "rawSpec": "https://github.com/phonegap/phonegap-plugin-push",
+    "saveSpec": "git+https://github.com/phonegap/phonegap-plugin-push.git",
+    "fetchSpec": "https://github.com/phonegap/phonegap-plugin-push.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/phonegap-plugin-push/-/phonegap-plugin-push-2.2.3.tgz",
-  "_shasum": "2d4e728f233321818d6ea588ac35e71b81a03823",
-  "_spec": "phonegap-plugin-push@2.2.3",
+  "_resolved": "git+https://github.com/phonegap/phonegap-plugin-push.git#7bde3b47d9941e2a0c9e4eeac91e70451ce4048d",
+  "_spec": "https://github.com/phonegap/phonegap-plugin-push",
   "_where": "D:\\Projects\\phonegap-fcm-push-example",
   "author": {
     "name": "Adobe PhoneGap Team"
