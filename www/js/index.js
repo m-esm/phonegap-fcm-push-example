@@ -34,26 +34,6 @@ function onDeviceReady() {
         windows: {}
     });
 
-<<<<<<< HEAD
-    push.on('registration', data => {
-
-        log({ registration: data })
-    });
-
-    push.on('notification', data => {
-        log({ notification: data })
-
-        push.setApplicationIconBadgeNumber(
-            () => {
-                log({ setApplicationIconBadgeNumber: 'success' })
-            },
-            () => {
-                log({ setApplicationIconBadgeNumber: 'error' })
-
-            },
-            i++
-        );
-=======
     //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
     //Here you define your application behaviour based on the notification data.
     FCMPlugin.onNotification(function (data) {
@@ -71,7 +51,6 @@ function onDeviceReady() {
                 data.title,           // title
                 'Ok'                  // buttonName
             );
->>>>>>> parent of 260a9bb... p
 
     });
 
