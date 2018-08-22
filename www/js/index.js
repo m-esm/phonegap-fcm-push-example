@@ -33,9 +33,12 @@ function onDeviceReady() {
     //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
     //Here you define your application behaviour based on the notification data.
     FCMPlugin.onNotification(function (data) {
+
         log({ onNotification: data });
 
         navigator.vibrate(500);
+
+        cordova.plugins.notification.badge.set(i++);
 
     });
 

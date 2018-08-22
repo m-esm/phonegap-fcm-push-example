@@ -42,6 +42,9 @@
     },
     "cordova-plugin-fcm": {
       "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "agency.serendip.phonegap_fcm_push_example"
     }
   },
   "dependent_plugins": {

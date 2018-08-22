@@ -428,6 +428,28 @@ module.exports = [
         "clobbers": [
             "FCMPlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/www/badge.js",
+        "id": "cordova-plugin-badge.Badge",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/favico.min.js",
+        "id": "cordova-plugin-badge.Badge.Favico",
+        "pluginId": "cordova-plugin-badge",
+        "clobbers": [
+            "cordova.plugins.notification.badge.Favico"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-badge/src/browser/BadgeProxy.js",
+        "id": "cordova-plugin-badge.Badge.Proxy",
+        "pluginId": "cordova-plugin-badge",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -446,7 +468,8 @@ module.exports.metadata =
     "cordova-plugin-inappbrowser": "1.7.2",
     "cordova-plugin-network-information": "1.3.4",
     "cordova-plugin-vibration": "2.1.6",
-    "cordova-plugin-fcm": "2.1.2"
+    "cordova-plugin-fcm": "2.1.2",
+    "cordova-plugin-badge": "0.8.7"
 }
 // BOTTOM OF METADATA
 });

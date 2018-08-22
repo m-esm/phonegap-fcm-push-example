@@ -35,25 +35,9 @@ function onDeviceReady() {
     FCMPlugin.onNotification(function (data) {
         log({ onNotification: data });
 
-        navigator.vibrate(1000);
-
+        navigator.vibrate(500);
 
     });
-
-    var a =
-    {
-        "to": "SERVER_API_KEY_From_fcm_console",
-
-        "notification": {
-            "title": "salam",
-            "body": "chetori",
-            "collapse_key": "hello",
-            "sound": "default",
-            "click_action": "FCM_PLUGIN_ACTIVITY",
-            "color": "#ff0000"
-        }
-
-    }
 
 
 }
