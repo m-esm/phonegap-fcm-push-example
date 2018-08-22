@@ -17,6 +17,12 @@ function onDeviceReady() {
 
     log({ message: 'device is ready' });
 
+    PushNotification.PushNotification.prototype.clearAllNotifications(() => {
+
+        log({ clearAllNotifications: 'success' });
+    }, () => {
+        log({ clearAllNotifications: 'error' });
+    });
 
     //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
     //Note that this callback will be fired everytime a new token is generated, including the first time.
