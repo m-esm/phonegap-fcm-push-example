@@ -18,7 +18,7 @@ function onDeviceReady() {
     try {
         registerPhonegapPushPlugin();
     } catch (error) {
-        log({ error: error });
+        log({ error: JSON.stringify(error) });
     }
 
 }
