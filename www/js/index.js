@@ -35,16 +35,9 @@ function onDeviceReady() {
     FCMPlugin.onNotification(function (data) {
         log({ onNotification: data });
 
-        navigator.vibrate(1000);
+        navigator.vibrate(500);
 
-        cordova.plugins.notification.local.schedule({
-            title: data.title,
-            text: data.text,
-            foreground: true
-        });
     });
-
-
 
 
 }

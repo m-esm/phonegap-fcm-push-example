@@ -17,38 +17,7 @@ function onDeviceReady() {
 
     log({ message: 'device is ready' });
 
-    //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
-    //Here you define your application behaviour based on the notification data.
-    FCMPlugin.onNotification(function (data) {
-        if (data.wasTapped) {
 
-            //Notification was received on device tray and tapped by the user.
-            log({ onNotification: data });
-
-        } else {
-            //Notification was received in foreground. Maybe the user needs to be notified.
-            log({ onNotification: data });
-        }
-    });
-
-    push.on('error', e => {
-        log({ error: e })
-    });
-
-    PushNotification.createChannel(
-        () => {
-            console.log('success');
-        },
-        () => {
-            console.log('error');
-        },
-        {
-            id: 'testchannel1',
-            description: 'My first test channel',
-            importance: 3,
-            vibration: true
-        }
-    );
     //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
     //Note that this callback will be fired everytime a new token is generated, including the first time.
     FCMPlugin.onTokenRefresh(function (token) {
@@ -64,13 +33,27 @@ function onDeviceReady() {
     //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
     //Here you define your application behaviour based on the notification data.
     FCMPlugin.onNotification(function (data) {
-        navigator.notification.alert(
-            data.body,         // message
-            null,                 // callback
-            data.title,           // title
-            'Ok'                  // buttonName
-        );
+        log({ onNotification: data });
+
+        navigator.vibrate(1000);
+
+
     });
+
+    var a =
+    {
+        "to": "SERVER_API_KEY_From_fcm_console",
+
+        "notification": {
+            "title": "salam",
+            "body": "chetori",
+            "collapse_key": "hello",
+            "sound": "default",
+            "click_action": "FCM_PLUGIN_ACTIVITY",
+            "color": "#ff0000"
+        }
+
+    }
 
 
 }
