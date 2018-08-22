@@ -25,7 +25,7 @@ function onDeviceReady() {
             log({ clearAllNotifications: 'error' });
         });
     } catch (error) {
-        log({ clearAllNotifications: error });
+        log({ clearAllNotifications: JSON.stringify( error) });
     }
 
 
