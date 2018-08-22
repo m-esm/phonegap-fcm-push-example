@@ -11,53 +11,11 @@ function log(input) {
 }
 
 log({ message: 'hello' });
+var i = 0;
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 
     log({ message: 'device is ready' });
-    try {
-        registerPhonegapPushPlugin();
-    } catch (error) {
-        log({ error: error });
-    }
-
-}
-
-function registerPhonegapPushPlugin() {
-    const push = PushNotification.init({
-        android: {},
-        browser: {
-            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-        },
-        ios: {
-            alert: 'true',
-            badge: true,
-            sound: 'false'
-        },
-        windows: {}
-    });
-
-    PushNotification.hasPermission(data => {
-        log({ hasPermission: data });
-    });
-
-    push.on('registration', data => {
-        log({ registration: data });
-    });
-
-
-    push.on('notification', data => {
-        log({ notification: data });
-    });
-
-    push.on('error', e => {
-        log({ error: e });
-    });
-
-}
-
-function registerFCMPlugin() {
-
 
 
     //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
@@ -75,11 +33,27 @@ function registerFCMPlugin() {
     //FCMPlugin.onNotification( onNotificationCallback(data), successCallback(msg), errorCallback(err) )
     //Here you define your application behaviour based on the notification data.
     FCMPlugin.onNotification(function (data) {
-
         log({ onNotification: data });
 
-        navigator.vibrate(500);
+        navigator.vibrate(1000);
 
 
     });
+
+    var a =
+    {
+        "to": "SERVER_API_KEY_From_fcm_console",
+
+        "notification": {
+            "title": "salam",
+            "body": "chetori",
+            "collapse_key": "hello",
+            "sound": "default",
+            "click_action": "FCM_PLUGIN_ACTIVITY",
+            "color": "#ff0000"
+        }
+
+    }
+
+
 }
