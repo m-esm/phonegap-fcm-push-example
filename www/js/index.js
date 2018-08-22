@@ -15,6 +15,8 @@ var i = 0;
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 
+    log({ message: 'device is ready' });
+
     registerPhonegapPushPlugin();
 
 }
@@ -54,7 +56,6 @@ function registerPhonegapPushPlugin() {
 
 function registerFCMPlugin() {
 
-    log({ message: 'device is ready' });
 
 
     //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );

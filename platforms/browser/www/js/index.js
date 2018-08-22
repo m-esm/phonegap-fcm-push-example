@@ -17,6 +17,46 @@ function onDeviceReady() {
 
     log({ message: 'device is ready' });
 
+    registerPhonegapPushPlugin();
+
+}
+
+function registerPhonegapPushPlugin() {
+    const push = PushNotification.init({
+        android: {},
+        browser: {
+            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+        },
+        ios: {
+            alert: 'true',
+            badge: true,
+            sound: 'false'
+        },
+        windows: {}
+    });
+
+    PushNotification.hasPermission(data => {
+        log({ hasPermission: data });
+    });
+
+    push.on('registration', data => {
+        log({ registration: data });
+    });
+
+
+    push.on('notification', data => {
+        log({ notification: data });
+    });
+
+    push.on('error', e => {
+        log({ error: e });
+    });
+
+}
+
+function registerFCMPlugin() {
+
+
 
     //FCMPlugin.onTokenRefresh( onTokenRefreshCallback(token) );
     //Note that this callback will be fired everytime a new token is generated, including the first time.
@@ -38,9 +78,6 @@ function onDeviceReady() {
 
         navigator.vibrate(500);
 
-        cordova.plugins.notification.badge.set(i++);
 
     });
-
-
 }
