@@ -11,13 +11,15 @@ function log(input) {
 }
 
 log({ message: 'hello' });
-var i = 0;
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 
     log({ message: 'device is ready' });
-
-    registerPhonegapPushPlugin();
+    try {
+        registerPhonegapPushPlugin();
+    } catch (error) {
+        log({ error: error });
+    }
 
 }
 
