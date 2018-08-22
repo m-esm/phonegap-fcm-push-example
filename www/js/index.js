@@ -15,6 +15,45 @@ var i = 0;
 document.addEventListener('deviceready', onDeviceReady, false);
 function onDeviceReady() {
 
+    registerPhonegapPushPlugin();
+
+}
+
+function registerPhonegapPushPlugin() {
+    const push = PushNotification.init({
+        android: {},
+        browser: {
+            pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+        },
+        ios: {
+            alert: 'true',
+            badge: true,
+            sound: 'false'
+        },
+        windows: {}
+    });
+
+    PushNotification.hasPermission(data => {
+        log({ hasPermission: data });
+    });
+
+    push.on('registration', data => {
+        log({ registration: data });
+    });
+
+
+    push.on('notification', data => {
+        log({ notification: data });
+    });
+
+    push.on('error', e => {
+        log({ error: e });
+    });
+
+}
+
+function registerFCMPlugin() {
+
     log({ message: 'device is ready' });
 
 
@@ -38,9 +77,6 @@ function onDeviceReady() {
 
         navigator.vibrate(500);
 
-        cordova.plugins.notification.badge.set(i++);
 
     });
-
-
 }
